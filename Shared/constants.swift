@@ -8,7 +8,7 @@
 enum Constants {
 	static let pkgutilPath = "/usr/sbin/pkgutil"
 	static let launchCtlPath = "/bin/launchctl"
-	static let repoUrl = "https://almenscorner.github.io/play/"
+	static let repoUrl = "https://almenscorner.github.io/AppPruner/"
 	static let uninstallCheckPaths = [
 		"/Applications/",
 		"/Applications/Utilities/",
