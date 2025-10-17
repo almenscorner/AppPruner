@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_at": "2025-10-17T14:22:19Z",
+  "items": [
+    {
+      "id": "com.microsoft.CompanyPortalMac",
+      "name": "companyportal",
+      "version": "1",
+      "updated_at": "2025-10-17T13:41:06Z",
+      "path": "defs/Microsoft/companyportal.json",
+      "sha256": "f8a3ce28187e2a4b93b2b29b9ac9d403941f8a95a95d0f80d4efb05e3ed916ba"
+    },
+    {
+      "id": "us.zoom-xos",
+      "name": "zoom",
+      "version": "1",
+      "updated_at": "2025-10-17T13:42:02Z",
+      "path": "defs/Zoom/zoom.json",
+      "sha256": "9f150f33a59b167d2be1956e7e6e211185e195064a5204e7fe734bf3a28ec895"
+    }
+  ]
+}
