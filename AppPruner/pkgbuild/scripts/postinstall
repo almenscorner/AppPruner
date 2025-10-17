@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# create a symlink to the binary in /usr/local/bin
+# so that it can be run from anywhere
+
+set -e
+
+symlink_dir="/usr/local/bin"
+path_dir="/Applications/AppPruner.app/Contents/MacOS/AppPruner"
+
+if [ ! -e "$symlink_dir/apppruner" ]; then
+    
+    ln -s "$path_dir" "$symlink_dir/apppruner"
+
+    if [ $? -ne 0 ]; then
+        echo "Failed to create symlink for apppruner"
+        exit 1
+    fi
+    echo "Created symlink for apppruner in $symlink_dir"
+else
+    echo "Symlink for apppruner already exists in $symlink_dir"
+fi
