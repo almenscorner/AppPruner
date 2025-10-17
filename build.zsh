@@ -172,6 +172,7 @@ if [ -d "$PKGBUILDDIR/payload/Applications/AppPruner.app" ]; then
 rm -r "$PKGBUILDDIR/payload/Applications/AppPruner.app"
 fi
 
+mkdir "$PKGBUILDDIR/payload"
 mkdir "$PKGBUILDDIR/payload/Applications"
 cp -R "${BUILDSDIR}/AppPruner.xcarchive/Products/Applications/AppPruner.app" "$PKGBUILDDIR/payload/Applications/AppPruner.app"
 
