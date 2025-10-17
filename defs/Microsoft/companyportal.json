@@ -1,0 +1,11 @@
+{
+  "name" : "companyportal",
+  "uninstall" : {
+    "appName" : "Company Portal",
+    "bundleId" : "com.microsoft.CompanyPortalMac",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-17T13:41:06Z",
+  "version" : "1"
+}
