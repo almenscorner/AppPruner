@@ -34,7 +34,7 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 	var result = Set<String>()
 	
 	// Build match targets from available uninstall fields without assuming unavailable members
-	let matchTargets = [def.uninstall.appName, def.uninstall.bundleId] + (def.uninstall.additionalPaths ?? [])
+	let matchTargets = [def.uninstall.appName, def.uninstall.bundleId] + (def.uninstall.additionalPaths ?? []) + (def.uninstall.alternativeNames ?? [])
 
 	let targetSetLower = Set(matchTargets.map { $0.lowercased() })
 

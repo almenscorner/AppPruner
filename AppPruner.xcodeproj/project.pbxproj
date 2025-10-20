@@ -30,31 +30,9 @@
 		F6DCCFED2EA23D330015B3E5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F6DCCE062EA1140A0015B3E5 /* Exceptions for "AppPruner" folder in "AppPrunerCore" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Services/notificationService.swift,
-			);
-			target = F6DCCDD12EA110060015B3E5 /* AppPrunerCore */;
-		};
-		F6DCD0D12EA278400015B3E5 /* Exceptions for "AppPruner" folder in "AppPruner" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-				pkgbuild/scripts/postinstall,
-			);
-			target = F6DCCDA32EA10FA90015B3E5 /* AppPruner */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F6DCCDA62EA10FA90015B3E5 /* AppPruner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F6DCD0D12EA278400015B3E5 /* Exceptions for "AppPruner" folder in "AppPruner" target */,
-				F6DCCE062EA1140A0015B3E5 /* Exceptions for "AppPruner" folder in "AppPrunerCore" target */,
-			);
 			path = AppPruner;
 			sourceTree = "<group>";
 		};
