@@ -6,6 +6,7 @@ Command‑line tool for managing macOS app uninstallations.
 - Run dry‑runs safely
 - Generate uninstall definition manifests
 - List and sync definition catalog
+- Generate file removal reports
 
 ## NOTE
 
@@ -50,7 +51,7 @@ AppPruner sync-definitions
 - Generate a new definition manifest:
 ```bash
 AppPruner generate-app-definition \
-  --name "companyportal" \
+  --definition-name "companyportal" \
   --app-name "Company Portal" \
   --bundle-id "com.microsoft.CompanyPortalMac" \
   --alternative-names "Company,MS Company Portal" \
@@ -58,6 +59,11 @@ AppPruner generate-app-definition \
   --forget-pkg \
   --unload-launch-daemons \
   --output-path ./defs
+```
+
+- Generate a report of what would be uninstalled:
+```bash
+AppPruner generate-file-report --definition-name "companyportal" --output-path ./
 ```
 
 ## CLI reference
@@ -91,6 +97,12 @@ AppPruner uses subcommands. The default subcommand is uninstall. If you run AppP
 
 - sync-definitions
   - Syncs the local catalog with the remote source.
+
+- generate-file-report
+  - --definition-name <string> (optional if --definition-path is not set)
+  - --definition-path <path> (optional if --definition-name is not set)
+  - --version <string>           (select a specific definition version if multiple are available. default: latest)
+  - --output-path <path>        (default: current directory)
 
 Global options
 - A shared GlobalOptions group is used; if available, use --debug for verbose logging.
