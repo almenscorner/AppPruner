@@ -164,13 +164,11 @@ struct HTTP {
 
 // MARK: - Catalog refresh
 
-func refreshIndexIfNeeded(force: Bool = false) {
+func refreshIndex() {
     do {
         try ensureDirs()
-        AppLog.debug("Refreshing index (force=\(force))")
+        AppLog.debug("Refreshing index")
         let need = true // always refresh on run
-        AppLog.debug("Index refresh needed: \(need)")
-        guard need else { return }
 
         let lock = UpdateLock()
         try lock.acquire()
@@ -282,7 +280,7 @@ func ensureDefinition(_ item: IndexFile.Item) throws -> URL {
 /// Call this once near startup (or when user passes --update)
 func syncCatalog(force: Bool = false) {
     AppLog.debug("syncCatalog(force=\(force)) started")
-    refreshIndexIfNeeded(force: force)
+    refreshIndex()
     // Opportunistic prefetch (optional): warm new defs in background
     if let idx = try? loadIndex() {
         AppLog.debug("Prefetching \(idx.items.count) definitions")
