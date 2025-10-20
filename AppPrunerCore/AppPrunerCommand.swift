@@ -83,7 +83,7 @@ struct generateAppDefinition: ParsableCommand {
 	mutating func run() throws {
 		if global.debug { AppPrunerConfig.debugEnabled = true }
 		try generateDefinition(
-			name: name,
+			name: appName,
 			for: definitionName,
 			version: version,
 			alternativeNames: alternativeNames,
