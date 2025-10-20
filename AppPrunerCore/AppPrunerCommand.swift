@@ -16,7 +16,8 @@ struct AppPruner: ParsableCommand {
 			Uninstall.self,
 			listAppDefinitions.self,
 			generateAppDefinition.self,
-			syncDefinitions.self
+			syncDefinitions.self,
+			generateFileReport.self
 		],
 		defaultSubcommand: Uninstall.self
 	)
@@ -47,10 +48,10 @@ struct listAppDefinitions: ParsableCommand {
 struct generateAppDefinition: ParsableCommand {
 	static var configuration = CommandConfiguration(abstract: "Generate a definition for an app.")
 	
-	@Option(help: "Name of the definition to create.")
-	var name: String
-	
 	@Option(help: "App name to generate definition for.")
+	var appName: String
+	
+	@Option(help: "Name of definition to generate.")
 	var definitionName: String
 
 	@Option(help: "Version of the definition. Default: 1.")
@@ -140,4 +141,51 @@ struct Uninstall: ParsableCommand {
 			waitTime: waitTime,
 			definitionPath: definitionPath)
 	}
+}
+
+struct generateFileReport: ParsableCommand {
+	static var configuration = CommandConfiguration(abstract: "Generate a report of files that would be affected by an uninstall.")
+	
+	@Option(help: "Name of the definition to generate a report for.")
+	var definitionName: String?
+	@Option(help: "Path to definition, do not use with --definition-name")
+	var definitionPath: String?
+	@Option(help: "Version of definition to load")
+	var version: String?
+	@Option(help: "Path to output file, if no path is provided, will print to stdout.")
+	var outputPath: String?
+	
+	@OptionGroup var global: GlobalOptions
+	
+	mutating func run() throws {
+		let fm = FileManager.default
+		var defData = Data()
+		if definitionPath != nil && fm.fileExists(atPath: definitionPath!) {
+			let definitionURL = URL(fileURLWithPath: definitionPath!)
+			defData = try Data(contentsOf: definitionURL)
+		} else {
+			defData = try loadDefinition(appName: definitionName!, version: version)
+		}
+		
+		// Decode definition
+		let appData: Definition = try MainActor.assumeIsolated {
+			try JSONDecoder().decode(Definition.self, from: defData)
+		}
+		
+		// Get application files
+		let appFiles = try searchFoldersForApp(appData, matchMode: .all, removeUserHive: true)
+		
+		if outputPath?.isEmpty == false {
+			let encoder = JSONEncoder()
+			encoder.outputFormatting = [.prettyPrinted, .withoutEscapingSlashes]
+			let jsonData = try encoder.encode(appFiles)
+			// create the file
+			try jsonData.write(to: URL(fileURLWithPath: "\(outputPath!)/\(appData.uninstall.appName)_report.json"), options: .atomic)
+			AppLog.info("Report written to \(outputPath!)/\(appData.uninstall.appName)_report.json")
+		} else {
+			print("----------------------------------------------------------")
+			print("Found \(appFiles.count) files that would be affected by an uninstall")
+			print("----------------------------------------------------------")
+			print(appFiles.sorted().joined(separator: "\n"))}
+		}
 }
