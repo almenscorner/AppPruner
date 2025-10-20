@@ -1,0 +1,11 @@
+{
+  "name" : "nudge",
+  "uninstall" : {
+    "appName" : "Nudge",
+    "bundleId" : "com.github.macadmins.Nudge",
+    "forgetPkg" : false,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-20T11:04:05Z",
+  "version" : "1"
+}

@@ -1,7 +1,31 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-20T10:59:30Z",
+  "generated_at": "2025-10-20T12:07:42Z",
   "items": [
+    {
+      "id": "org.gimp.gimp-3.0",
+      "name": "gimp30",
+      "version": "1",
+      "updated_at": "2025-10-20T12:05:20Z",
+      "path": "defs/GIMP/gimp30.json",
+      "sha256": "5df8e357a3aad766634faa9b7c76c85f91f47f385ad5755b8c2e0197d4a70310"
+    },
+    {
+      "id": "com.piriform.ccleaner",
+      "name": "ccleaner",
+      "version": "1",
+      "updated_at": "2025-10-20T12:06:34Z",
+      "path": "defs/GenDigital/ccleaner.json",
+      "sha256": "8bf87fcdf70e8d92eee4c68613dadd9a9420fe0eb51d8d56b606189ff1a2dc1d"
+    },
+    {
+      "id": "com.github.macadmins.Nudge",
+      "name": "nudge",
+      "version": "1",
+      "updated_at": "2025-10-20T11:04:05Z",
+      "path": "defs/MacAdmins/nudge.json",
+      "sha256": "79c2220b70231c93215b54b208b2a4c7ba8a293b0cfeceb176aa02881a26d693"
+    },
     {
       "id": "com.github.macadmins.SupportCompanion",
       "name": "supportcompanion",

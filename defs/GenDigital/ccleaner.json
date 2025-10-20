@@ -1,0 +1,11 @@
+{
+  "name" : "ccleaner",
+  "uninstall" : {
+    "appName" : "CCleaner",
+    "bundleId" : "com.piriform.ccleaner",
+    "forgetPkg" : false,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-20T12:06:34Z",
+  "version" : "1"
+}

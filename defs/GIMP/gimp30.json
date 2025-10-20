@@ -1,0 +1,11 @@
+{
+  "name" : "gimp30",
+  "uninstall" : {
+    "appName" : "GIMP",
+    "bundleId" : "org.gimp.gimp-3.0",
+    "forgetPkg" : false,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-20T12:05:20Z",
+  "version" : "1"
+}
