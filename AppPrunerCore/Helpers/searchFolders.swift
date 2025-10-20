@@ -78,10 +78,31 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 			while let item = enumerator?.nextObject() as? String {
 				recursiveItems.append(item)
 			}
+		} else {
+			// search one folder deeper and not all the way down e.g. /Library/Application Support/SOMEAPP and not /Library/Application Support/SOMEAPP/SUBFOLDER
+			let enumerator = fm.enumerator(atPath: folder)
+			while let item = enumerator?.nextObject() as? String {
+				// Only accept top-level entries (no slash in the relative path)
+				guard !item.contains("/") else {
+					// Prevent recursing into deeper items for performance
+					enumerator?.skipDescendants()
+					continue
+				}
+				let fullItemPath = (folder as NSString).appendingPathComponent(item)
+				var isDir: ObjCBool = false
+				if fm.fileExists(atPath: fullItemPath, isDirectory: &isDir), isDir.boolValue {
+					let subItems = (try? fm.contentsOfDirectory(atPath: fullItemPath)) ?? []
+					recursiveItems.append(contentsOf: subItems.map { (fullItemPath as NSString).appendingPathComponent($0) })
+				}
+			}
 		}
 
 		do {
-			items = try fm.contentsOfDirectory(atPath: folder)
+			if folder == "/var/folders/" {
+				items = try fm.contentsOfDirectory(atPath: folder)
+			} else {
+				items = try fm.contentsOfDirectory(atPath: folder).map { (folder as NSString).appendingPathComponent($0) }
+			}
 			if !recursiveItems.isEmpty {
 				let merged = Set(items).union(Set(recursiveItems))
 				items = Array(merged)
@@ -94,7 +115,7 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 		var chosenParents = Set<String>()
 
 		for item in items {
-			let fullItemPath = (folder as NSString).appendingPathComponent(item)
+			let fullItemPath = (folder == "/var/folders/") ? ((folder as NSString).appendingPathComponent(item)) : item
 
 			// If we already chose a parent, skip its descendants
 			if folder == "/var/folders/" && chosenParents.contains(where: { fullItemPath == $0 || fullItemPath.hasPrefix($0 + "/") }) {
