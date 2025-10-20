@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-17T14:22:19Z",
+  "generated_at": "2025-10-20T10:59:30Z",
   "items": [
+    {
+      "id": "com.github.macadmins.SupportCompanion",
+      "name": "supportcompanion",
+      "version": "1",
+      "updated_at": "2025-10-20T10:54:24Z",
+      "path": "defs/MacAdmins/supportcompanion.json",
+      "sha256": "677c8d9cc5ccd6b739715e15cea6ff359da64ec179387b44c2ac3bdbf9d656da"
+    },
     {
       "id": "com.microsoft.CompanyPortalMac",
       "name": "companyportal",
@@ -9,6 +17,14 @@
       "updated_at": "2025-10-17T13:41:06Z",
       "path": "defs/Microsoft/companyportal.json",
       "sha256": "f8a3ce28187e2a4b93b2b29b9ac9d403941f8a95a95d0f80d4efb05e3ed916ba"
+    },
+    {
+      "id": "com.electron.ollama",
+      "name": "ollama",
+      "version": "1",
+      "updated_at": "2025-10-20T10:51:22Z",
+      "path": "defs/Ollama/ollama.json",
+      "sha256": "edc9e3a0b49e9e1fd97d5d2d455d9578cca81b8bc65fb62f9fd588960eeb53da"
     },
     {
       "id": "us.zoom-xos",
