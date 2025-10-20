@@ -1,0 +1,11 @@
+{
+  "name" : "ollama",
+  "uninstall" : {
+    "appName" : "Ollama",
+    "bundleId" : "com.electron.ollama",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-20T10:51:22Z",
+  "version" : "1"
+}

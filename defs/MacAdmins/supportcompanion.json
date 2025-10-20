@@ -1,0 +1,11 @@
+{
+  "name" : "supportcompanion",
+  "uninstall" : {
+    "appName" : "SupportCompanion",
+    "bundleId" : "com.github.macadmins.SupportCompanion",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-20T10:54:24Z",
+  "version" : "1"
+}
