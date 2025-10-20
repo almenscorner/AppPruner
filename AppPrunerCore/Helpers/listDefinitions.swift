@@ -9,7 +9,14 @@ func listDefinitions() throws {
 	syncCatalog(force: false)
 	// get all definitions from the index
 	let index = try loadIndex()
-	for def in index.items {
-		print("\(def.id) - \(def.name) (version: \(def.version), updated: \(def.updated_at))")
-	}
+    let rows: [[String]] = index.items.map { def in
+        [def.id, def.name, def.version, def.updated_at]
+    }
+
+    let table = Table(
+        headers: ["id", "name", "version", "updated"],
+        rows: rows
+    )
+
+    table.render()
 }
