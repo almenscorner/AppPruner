@@ -54,7 +54,7 @@ jobs:
           body: |
             # Notes
             This is a pre-release version of AppPruner created by GitHub Actions.
-            SupportCompanion.app has been signed and notarized. The package has been signed, notarized and stapled.
+            AppPruner.app has been signed and notarized. The package has been signed, notarized and stapled.
 
             # Changelog
 
