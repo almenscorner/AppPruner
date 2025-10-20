@@ -20,6 +20,8 @@ Download and install the latest PKG under releases.
 
 ## Quick start
 
+AppPruner should be run as sudo.
+
 - Show help (top‑level):
 ```bash
 AppPruner --help
