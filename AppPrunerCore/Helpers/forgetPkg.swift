@@ -14,7 +14,11 @@ func forgetPackage(def: Definition, dryRun: Bool = false) throws {
 		let output = String(data: outputData, encoding: .utf8) ?? ""
 		let installedPackages = output.split(separator: "\n").map(String.init)
 		let alternativeNames = def.uninstall.alternativeNames ?? []
-		let matchingPackages = installedPackages.filter { pkg in pkg.contains(def.uninstall.appName) || alternativeNames.contains(where: { pkg.contains($0) }) }
+		let matchingPackages = installedPackages.filter { 
+			pkg in pkg.contains(def.uninstall.appName) || 
+			alternativeNames.contains(where: { pkg.contains($0) }) ||
+			pkg.contains(def.uninstall.bundleId)
+		}
 		if matchingPackages.isEmpty {
 			AppLog.info("Package receipt not found (skipped): \(def.uninstall.appName)")
 		} else {
