@@ -14,6 +14,54 @@ enum MatchMode {
 	case all // all modes
 }
 
+// Formats a byte count into a human-readable string (e.g., "12.3 MB")
+func formatBytes(_ bytes: UInt64) -> String {
+    let units = ["B", "KB", "MB", "GB", "TB", "PB"]
+    var value = Double(bytes)
+    var unitIndex = 0
+    while value >= 1024.0 && unitIndex < units.count - 1 {
+        value /= 1024.0
+        unitIndex += 1
+    }
+    // Show no decimals for bytes, one decimal for larger units
+    if unitIndex == 0 {
+        return "\(Int(value)) \(units[unitIndex])"
+    } else {
+        return String(format: "%.1f %@", value, units[unitIndex])
+    }
+}
+
+func calculateSpaceSavings(for paths: Set<String>) -> UInt64 {
+	let fm = FileManager.default
+	var totalSize: UInt64 = 0
+	
+	for path in paths {
+		var isDir: ObjCBool = false
+		if fm.fileExists(atPath: path, isDirectory: &isDir) {
+			if isDir.boolValue {
+				// Directory: sum sizes of all contents
+				if let enumerator = fm.enumerator(atPath: path) {
+					for case let item as String in enumerator {
+						let fullItemPath = (path as NSString).appendingPathComponent(item)
+						if let attrs = try? fm.attributesOfItem(atPath: fullItemPath),
+						   let fileSize = attrs[.size] as? UInt64 {
+							totalSize += fileSize
+						}
+					}
+				}
+			} else {
+				// File: get size directly
+				if let attrs = try? fm.attributesOfItem(atPath: path),
+				   let fileSize = attrs[.size] as? UInt64 {
+					totalSize += fileSize
+				}
+			}
+		}
+	}
+	
+	return totalSize
+}
+
 func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeUserHive: Bool = false) throws -> Set<String> {
 	
 	let userNameResult = getConsoleUserProperty(type: .username)
@@ -33,6 +81,18 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 	let fm = FileManager.default
 	var result = Set<String>()
 	
+    // Helper: do not add a child path if any ancestor is already marked for removal
+    func isCoveredByAncestor(_ path: String, in set: Set<String>) -> Bool {
+        var current = (path as NSString).deletingLastPathComponent
+        while !current.isEmpty && current != "/" {
+            if set.contains(current) { return true }
+            let next = (current as NSString).deletingLastPathComponent
+            if next == current { break }
+            current = next
+        }
+        return false
+    }
+
 	// Build match targets from available uninstall fields without assuming unavailable members
 	let matchTargets = [def.uninstall.appName, def.uninstall.bundleId] + (def.uninstall.additionalPaths ?? []) + (def.uninstall.alternativeNames ?? [])
 
@@ -170,8 +230,10 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 						let toRemove = result.filter { $0 == anchorPath || $0.hasPrefix(anchorPath + "/") }
 						for r in toRemove { result.remove(r) }
 
-						chosenParents.insert(anchorPath)
-						result.insert(anchorPath)
+                        if !isCoveredByAncestor(anchorPath, in: result) {
+                            chosenParents.insert(anchorPath)
+                            result.insert(anchorPath)
+                        }
 						continue
 					}
 				}
@@ -211,10 +273,14 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 						let toRemove = result.filter { $0 == anchorPath || $0.hasPrefix(anchorPath + "/") }
 						for r in toRemove { result.remove(r) }
 
-						chosenParents.insert(anchorPath)
-						result.insert(anchorPath)
+                        if !isCoveredByAncestor(anchorPath, in: result) {
+                            chosenParents.insert(anchorPath)
+                            result.insert(anchorPath)
+                        }
 					} else {
-						result.insert(fullItemPath)
+                        if !isCoveredByAncestor(fullItemPath, in: result) {
+                            result.insert(fullItemPath)
+                        }
 					}
 				}
 			}
