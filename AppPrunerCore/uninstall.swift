@@ -120,16 +120,42 @@ func uninstallApp(def: String?,
 	}
 
 	// Remove files and directories
-	AppLog.info("Found \(appFiles.count) files to remove for app: \(appData.uninstall.appName)")
-	for filePath in appFiles {
-		if fm.fileExists(atPath: filePath) {
+	let spaceSavings = calculateSpaceSavings(for: appFiles)
+	AppLog.info("Found \(appFiles.count) items to remove for app \(appData.uninstall.appName) totaling \(formatBytes(spaceSavings))")
+	for filePath in appFiles.sorted() {
+		var isDir: ObjCBool = false
+		let exists = fm.fileExists(atPath: filePath, isDirectory: &isDir)
+
+		// Check if the path is a symbolic link, even if the target is missing (dangling symlink)
+		let isSymlink: Bool = {
+			if let attrs = try? fm.attributesOfItem(atPath: filePath),
+			   let type = attrs[.type] as? FileAttributeType {
+				return type == .typeSymbolicLink
+			}
+			return false
+		}()
+
+		// If it exists or is a symlink (including dangling), attempt removal
+		if exists || isSymlink {
 			do {
 				if dryRun {
-					AppLog.info("Uninstall dry run, would remove: \(filePath)")
+					if isSymlink && !exists {
+						AppLog.info("Uninstall dry run, would remove dangling symlink: \(filePath)")
+					} else if isSymlink {
+						AppLog.info("Uninstall dry run, would remove symlink: \(filePath)")
+					} else {
+						AppLog.info("Uninstall dry run, would remove: \(filePath)")
+					}
 					continue
 				}
 				try fm.removeItem(atPath: filePath)
-				AppLog.info("Removed: \(filePath)")
+				if isSymlink && !exists {
+					AppLog.info("Removed dangling symlink: \(filePath)")
+				} else if isSymlink {
+					AppLog.info("Removed symlink: \(filePath)")
+				} else {
+					AppLog.info("Removed: \(filePath)")
+				}
 			} catch {
 				AppLog.error("Failed to remove \(filePath): \(error)")
 			}
