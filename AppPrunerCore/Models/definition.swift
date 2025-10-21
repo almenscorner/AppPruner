@@ -22,4 +22,5 @@ struct UninstallData: Codable {
 	let additionalPaths: [String]?
 	let forgetPkg: Bool
 	let unloadLaunchDaemons: Bool
+	let matchMode: String?
 }

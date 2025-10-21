@@ -7,6 +7,21 @@
 
 import Foundation
 
+func setMatchMode(matchMode: String) -> MatchMode {
+	let mode: MatchMode
+	switch matchMode.lowercased() {
+	case "exact":
+		mode = .exact
+	case "prefix":
+		mode = .prefix
+	case "substring":
+		mode = .substring
+	default:
+		mode = .all
+	}
+	return mode
+}
+
 func uninstallApp(def: String?,
 				  matchMode: String?,
 				  dryRun: Bool = false,
@@ -16,22 +31,6 @@ func uninstallApp(def: String?,
 				  waitTime: Int? = 5,
 				  definitionPath: String? = nil) throws {
 	let fm = FileManager.default
-	
-	let mode: MatchMode
-	if let matchMode = matchMode {
-		switch matchMode.lowercased() {
-		case "exact":
-			mode = .exact
-		case "prefix":
-			mode = .prefix
-		case "substring":
-			mode = .substring
-		default:
-			mode = .all
-		}
-	} else {
-		mode = .all
-	}
 	
 	syncCatalog(force: true)
 	
@@ -45,6 +44,15 @@ func uninstallApp(def: String?,
 
 	// Decode definition
 	let appData = try JSONDecoder().decode(Definition.self, from: defData)
+	
+	let mode: MatchMode
+	if let matchMode = matchMode {
+		mode = setMatchMode(matchMode: matchMode)
+	} else if appData.uninstall.matchMode != nil {
+		mode = setMatchMode(matchMode: appData.uninstall.matchMode!)
+	} else {
+		mode = .all
+	}
 	
 	AppLog.info("Found definition for app: \(appData.name), version: \(appData.version)")
 

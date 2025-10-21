@@ -75,6 +75,9 @@ struct generateAppDefinition: ParsableCommand {
 	@Flag(help: "Unload launch daemons during uninstall. Default: false.")
 	var unloadLaunchDaemons: Bool = false
 	
+	@Option(help: "Matching strategy for file discovery: 'exact', 'prefix' or 'substring'. Will default to 'all' if not set.")
+	var matchMode: String?
+	
 	@Option(help: "Path to save the definition to. Defaults to the current working directory.")
 	var outputPath: String? = nil
 
@@ -92,7 +95,8 @@ struct generateAppDefinition: ParsableCommand {
 			additionalPaths: additionalPaths,
 			forgetPkg: forgetPkg,
 			unloadLaunchDaemons: unloadLaunchDaemons,
-			path: outputPath)
+			path: outputPath,
+			matchMode: matchMode)
 	}
 }
 

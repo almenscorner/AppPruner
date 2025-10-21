@@ -26,11 +26,11 @@ func unloadDaemons(def: Definition, dryRun: Bool = false) throws {
 		throw unloadDaemonError.userIDNotFound
 	}
 	let launchDFolders: [String] = ["/Library/LaunchAgents", "/Library/LaunchDaemons"]
-	
+	let alternativeNames = def.uninstall.alternativeNames ?? []
 	for launchDFolder in launchDFolders {
 		let launchDList = try fm.contentsOfDirectory(atPath: launchDFolder)
 		for launchD in launchDList {
-			if launchD.contains(def.uninstall.bundleId) {
+			if launchD.contains(def.uninstall.bundleId) || alternativeNames.contains(where: {launchD.contains($0)}) {
 				let launchDPath = "\(launchDFolder)/\(launchD)"
 				if launchDFolder.contains("LaunchAgents") {
 					let args = ["bootout", "gui/\(userIdString)", launchDPath]
