@@ -15,6 +15,7 @@ struct AppPruner: ParsableCommand {
 		subcommands: [
 			Uninstall.self,
 			listAppDefinitions.self,
+			searchAppDefinitions.self,
 			generateAppDefinition.self,
 			syncDefinitions.self,
 			generateFileReport.self
@@ -42,6 +43,20 @@ struct listAppDefinitions: ParsableCommand {
 	mutating func run() throws {
 		if global.debug { AppPrunerConfig.debugEnabled = true }
 		try listDefinitions()
+	}
+}
+
+struct searchAppDefinitions: ParsableCommand {
+	static var configuration = CommandConfiguration(abstract: "Search available definitions.")
+	
+	@Option(help: "Search term to look for in definition names.")
+	var name: String
+
+	@OptionGroup var global: GlobalOptions
+
+	mutating func run() throws {
+		if global.debug { AppPrunerConfig.debugEnabled = true }
+		try searchDefinitions(name: name)
 	}
 }
 

@@ -47,6 +47,11 @@ AppPruner uninstall --definition-name "companyportal" --match-mode substring --d
 AppPruner list-app-definitions
 ```
 
+- Search available definitions:
+```bash
+AppPruner search-app-definitions --name "ms"
+```
+
 - Sync local catalog with remote:
 ```bash
 AppPruner sync-definitions
@@ -60,6 +65,7 @@ AppPruner generate-app-definition \
   --bundle-id "com.microsoft.CompanyPortalMac" \
   --alternative-names "Company,MS Company Portal" \
   --additional-paths "/Library/Application Support/Microsoft/Intune,~/Library/Preferences/com.microsoft.CompanyPortalMac.plist" \
+  --match-mode "substring" \
   --forget-pkg \
   --unload-launch-daemons \
   --output-path ./defs
