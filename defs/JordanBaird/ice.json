@@ -1,0 +1,12 @@
+{
+  "name" : "ice",
+  "uninstall" : {
+    "appName" : "Ice",
+    "bundleId" : "com.jordanbaird.Ice",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false,
+    "matchMode" : "prefix"
+  },
+  "updated_at" : "2025-10-21T12:15:34Z",
+  "version" : "1"
+}

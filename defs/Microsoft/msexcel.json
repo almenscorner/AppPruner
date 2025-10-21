@@ -1,0 +1,11 @@
+{
+  "name" : "msexcel",
+  "uninstall" : {
+    "appName" : "Microsoft Excel",
+    "bundleId" : "com.microsoft.Excel",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:47:59Z",
+  "version" : "1"
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "msteams",
+  "uninstall" : {
+    "appName" : "Microsoft Teams",
+    "bundleId" : "com.microsoft.teams2",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:53:48Z",
+  "version" : "1"
+}

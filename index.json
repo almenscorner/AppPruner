@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-21T11:22:02Z",
+  "generated_at": "2025-10-21T12:32:43Z",
   "items": [
     {
       "id": "com.DigiDNA.iMazingProfileEditorMac",
@@ -43,6 +43,14 @@
       "sha256": "8115b40d12f9d731baf64492f824ec877191dac58bd63b492362a4dffe8cabe3"
     },
     {
+      "id": "com.jordanbaird.Ice",
+      "name": "ice",
+      "version": "1",
+      "updated_at": "2025-10-21T12:15:34Z",
+      "path": "defs/JordanBaird/ice.json",
+      "sha256": "0f4f36cac9461ceb637edce7386e4a05e5eb333e30d0e353bf43780362d38b26"
+    },
+    {
       "id": "com.github.macadmins.Nudge",
       "name": "nudge",
       "version": "1",
@@ -67,6 +75,62 @@
       "sha256": "f8a3ce28187e2a4b93b2b29b9ac9d403941f8a95a95d0f80d4efb05e3ed916ba"
     },
     {
+      "id": "com.microsoft.autoupdate2",
+      "name": "msautoupdate",
+      "version": "1",
+      "updated_at": "2025-10-21T12:07:26Z",
+      "path": "defs/Microsoft/msautoupdate.json",
+      "sha256": "271d7f7525111b9f3493a4a393a08d94c27292df099d2003dce92051136b1224"
+    },
+    {
+      "id": "com.microsoft.edgemac",
+      "name": "msedge",
+      "version": "1",
+      "updated_at": "2025-10-21T11:51:52Z",
+      "path": "defs/Microsoft/msedge.json",
+      "sha256": "6d936937f64a5d73811e0571d466d7a0e13b5178fd481af490ff34c78efb150d"
+    },
+    {
+      "id": "com.microsoft.Excel",
+      "name": "msexcel",
+      "version": "1",
+      "updated_at": "2025-10-21T11:47:59Z",
+      "path": "defs/Microsoft/msexcel.json",
+      "sha256": "c1e57e2c69fbd7d5b95bec113ddbbf359de79dd092c3811c9d4b0554802a19a2"
+    },
+    {
+      "id": "com.microsoft.onenote.mac",
+      "name": "msonenote",
+      "version": "1",
+      "updated_at": "2025-10-21T11:50:11Z",
+      "path": "defs/Microsoft/msonenote.json",
+      "sha256": "2c66ab11fde35c517ac61acd3fafe7e1563922118bf685b79edea5a764124a00"
+    },
+    {
+      "id": "com.microsoft.Powerpoint",
+      "name": "mspowerpoint",
+      "version": "1",
+      "updated_at": "2025-10-21T11:51:01Z",
+      "path": "defs/Microsoft/mspowerpoint.json",
+      "sha256": "d487039d8aa46dbc7905681407ad600de5b39df614bb5423038aa5d0561d3780"
+    },
+    {
+      "id": "com.microsoft.teams2",
+      "name": "msteams",
+      "version": "1",
+      "updated_at": "2025-10-21T11:53:48Z",
+      "path": "defs/Microsoft/msteams.json",
+      "sha256": "d084d721e4b85bb664e0f8e88d718d923428fc632ef907a7b651e57ec9b593bc"
+    },
+    {
+      "id": "com.microsoft.Word",
+      "name": "msword",
+      "version": "1",
+      "updated_at": "2025-10-21T11:48:20Z",
+      "path": "defs/Microsoft/msword.json",
+      "sha256": "104c304bde3267ca687670de4b10d77a794a5b15c9ffb75612cce52492b2d39b"
+    },
+    {
       "id": "com.microsoft.VSCode",
       "name": "vscode",
       "version": "1",
@@ -75,12 +139,28 @@
       "sha256": "b97939a0bc410c070ecbc337efd43de061dafc29e2ebe09800429c1b41226b84"
     },
     {
+      "id": "com.microsoft.rdc.macos",
+      "name": "windowsapp",
+      "version": "1",
+      "updated_at": "2025-10-21T11:43:03Z",
+      "path": "defs/Microsoft/windowsapp.json",
+      "sha256": "be2bd036c1ef4a4b500a8cc07ff2b21eea43373428f25dde244db8ceeabe93d1"
+    },
+    {
       "id": "com.electron.ollama",
       "name": "ollama",
       "version": "1",
       "updated_at": "2025-10-20T10:51:22Z",
       "path": "defs/Ollama/ollama.json",
       "sha256": "edc9e3a0b49e9e1fd97d5d2d455d9578cca81b8bc65fb62f9fd588960eeb53da"
+    },
+    {
+      "id": "com.valvesoftware.steam",
+      "name": "steam",
+      "version": "1",
+      "updated_at": "2025-10-21T12:14:42Z",
+      "path": "defs/Valve/steam.json",
+      "sha256": "2294aed90de122a9ef7d46decf9cccdc195f322028092d4a3abbf329c2cbaa8c"
     },
     {
       "id": "us.zoom-xos",

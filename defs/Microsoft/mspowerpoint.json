@@ -1,0 +1,11 @@
+{
+  "name" : "mspowerpoint",
+  "uninstall" : {
+    "appName" : "Microsoft PowerPoint",
+    "bundleId" : "com.microsoft.Powerpoint",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:51:01Z",
+  "version" : "1"
+}

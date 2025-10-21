@@ -1,0 +1,16 @@
+{
+  "name" : "msautoupdate",
+  "uninstall" : {
+    "alternativeNames" : [
+      "MAU2.0",
+      "com.microsoft.autoupdate",
+      "com.microsoft.update"
+    ],
+    "appName" : "Microsoft AutoUpdate",
+    "bundleId" : "com.microsoft.autoupdate2",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-21T12:07:26Z",
+  "version" : "1"
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "steam",
+  "uninstall" : {
+    "appName" : "Steam",
+    "bundleId" : "com.valvesoftware.steam",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T12:14:42Z",
+  "version" : "1"
+}

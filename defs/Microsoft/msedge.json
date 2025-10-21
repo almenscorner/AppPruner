@@ -1,0 +1,11 @@
+{
+  "name" : "msedge",
+  "uninstall" : {
+    "appName" : "Microsoft Edge",
+    "bundleId" : "com.microsoft.edgemac",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:51:52Z",
+  "version" : "1"
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "windowsapp",
+  "uninstall" : {
+    "appName" : "Windows App",
+    "bundleId" : "com.microsoft.rdc.macos",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:43:03Z",
+  "version" : "1"
+}

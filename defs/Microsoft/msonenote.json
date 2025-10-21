@@ -1,0 +1,11 @@
+{
+  "name" : "msonenote",
+  "uninstall" : {
+    "appName" : "Microsoft OneNote",
+    "bundleId" : "com.microsoft.onenote.mac",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:50:11Z",
+  "version" : "1"
+}
