@@ -1,0 +1,11 @@
+{
+  "name" : "dockerdesktop",
+  "uninstall" : {
+    "appName" : "Docker",
+    "bundleId" : "com.docker.docker",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T07:22:34Z",
+  "version" : "1"
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "imazingprofileeditor",
+  "uninstall" : {
+    "appName" : "iMazing Profile Editor",
+    "bundleId" : "com.DigiDNA.iMazingProfileEditorMac",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T08:19:24Z",
+  "version" : "1"
+}

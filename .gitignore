@@ -68,3 +68,9 @@ fastlane/test_output
 release/
 
 build/
+
+*.xcodeproj/
+
+AppPruner/
+
+AppPrunerCore/

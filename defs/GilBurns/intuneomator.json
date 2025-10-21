@@ -1,0 +1,11 @@
+{
+  "name" : "intuneomator",
+  "uninstall" : {
+    "appName" : "Intuneomator",
+    "bundleId" : "com.gilburns.intuneomator",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-21T07:06:03Z",
+  "version" : "1"
+}

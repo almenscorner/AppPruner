@@ -1,7 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-20T12:07:42Z",
+  "generated_at": "2025-10-21T11:22:02Z",
   "items": [
+    {
+      "id": "com.DigiDNA.iMazingProfileEditorMac",
+      "name": "imazingprofileeditor",
+      "version": "1",
+      "updated_at": "2025-10-21T08:19:24Z",
+      "path": "defs/DigiDNA/imazingprofileeditor.json",
+      "sha256": "a6861396f0cdf7a00a6d02d158ada6e85999fab54ac7449a4c30c383784aa384"
+    },
+    {
+      "id": "com.docker.docker",
+      "name": "dockerdesktop",
+      "version": "1",
+      "updated_at": "2025-10-21T07:22:34Z",
+      "path": "defs/Docker/dockerdesktop.json",
+      "sha256": "b45c946a8079976e20e6921fcb2047758c922dd908bd6bae29a61caa93042614"
+    },
     {
       "id": "org.gimp.gimp-3.0",
       "name": "gimp30",
@@ -17,6 +33,14 @@
       "updated_at": "2025-10-20T12:06:34Z",
       "path": "defs/GenDigital/ccleaner.json",
       "sha256": "8bf87fcdf70e8d92eee4c68613dadd9a9420fe0eb51d8d56b606189ff1a2dc1d"
+    },
+    {
+      "id": "com.gilburns.intuneomator",
+      "name": "intuneomator",
+      "version": "1",
+      "updated_at": "2025-10-21T07:06:03Z",
+      "path": "defs/GilBurns/intuneomator.json",
+      "sha256": "8115b40d12f9d731baf64492f824ec877191dac58bd63b492362a4dffe8cabe3"
     },
     {
       "id": "com.github.macadmins.Nudge",
@@ -41,6 +65,14 @@
       "updated_at": "2025-10-17T13:41:06Z",
       "path": "defs/Microsoft/companyportal.json",
       "sha256": "f8a3ce28187e2a4b93b2b29b9ac9d403941f8a95a95d0f80d4efb05e3ed916ba"
+    },
+    {
+      "id": "com.microsoft.VSCode",
+      "name": "vscode",
+      "version": "1",
+      "updated_at": "2025-10-21T11:16:30Z",
+      "path": "defs/Microsoft/vscode.json",
+      "sha256": "b97939a0bc410c070ecbc337efd43de061dafc29e2ebe09800429c1b41226b84"
     },
     {
       "id": "com.electron.ollama",

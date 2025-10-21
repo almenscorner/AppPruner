@@ -1,0 +1,14 @@
+{
+  "name" : "vscode",
+  "uninstall" : {
+    "alternativeNames" : [
+      "vscode"
+    ],
+    "appName" : "Visual Studio Code",
+    "bundleId" : "com.microsoft.VSCode",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-21T11:16:30Z",
+  "version" : "1"
+}
