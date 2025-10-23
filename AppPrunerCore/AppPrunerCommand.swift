@@ -93,6 +93,9 @@ struct generateAppDefinition: ParsableCommand {
 	@Option(help: "Matching strategy for file discovery: 'exact', 'prefix' or 'substring'. Will default to 'all' if not set.")
 	var matchMode: String?
 	
+	@Option(help: "Homebrew name to look up for the app. If not set app name will be used.")
+	var brewName: String?
+	
 	@Option(help: "Path to save the definition to. Defaults to the current working directory.")
 	var outputPath: String? = nil
 
@@ -111,7 +114,8 @@ struct generateAppDefinition: ParsableCommand {
 			forgetPkg: forgetPkg,
 			unloadLaunchDaemons: unloadLaunchDaemons,
 			path: outputPath,
-			matchMode: matchMode)
+			matchMode: matchMode,
+			brewName: brewName)
 	}
 }
 
@@ -141,6 +145,9 @@ struct Uninstall: ParsableCommand {
 	
 	@Option(help: "Run a specific definition from a path (skipped by default). Does not work with --definition-name")
 	var definitionPath: String?
+
+	@Flag(help: "Run homebrew tidy post uninstall if applicable.")
+	var brewTidy: Bool = false
 	
 	@OptionGroup var global: GlobalOptions
 
@@ -158,7 +165,8 @@ struct Uninstall: ParsableCommand {
 			silent: silent,
 			version: version,
 			waitTime: waitTime,
-			definitionPath: definitionPath)
+			definitionPath: definitionPath,
+			brewTidy: brewTidy)
 	}
 }
 
@@ -173,6 +181,8 @@ struct generateFileReport: ParsableCommand {
 	var version: String?
 	@Option(help: "Path to output file, if no path is provided, will print to stdout.")
 	var outputPath: String?
+	@Option(help: "Match mode for file discovery: 'exact', 'prefix', 'substring', or 'all' (default: 'all')")
+	var matchMode: String?
 	
 	@OptionGroup var global: GlobalOptions
 	
@@ -191,20 +201,38 @@ struct generateFileReport: ParsableCommand {
 			try JSONDecoder().decode(Definition.self, from: defData)
 		}
 		
+		let mode: MatchMode
+		if let matchMode = matchMode {
+			mode = setMatchMode(matchMode: matchMode)
+		} else if appData.uninstall.matchMode != nil {
+			mode = setMatchMode(matchMode: appData.uninstall.matchMode!)
+		} else {
+			mode = .all
+		}
+		
 		// Get application files
-		let appFiles = try searchFoldersForApp(appData, matchMode: .all, removeUserHive: true)
+		let appFiles = try searchFoldersForApp(appData, matchMode: mode, removeUserHive: true)
+		let spaceSavings = calculateSpaceSavings(for: appFiles)
 		
 		if outputPath?.isEmpty == false {
 			let encoder = JSONEncoder()
 			encoder.outputFormatting = [.prettyPrinted, .withoutEscapingSlashes]
 			let jsonData = try encoder.encode(appFiles)
+			// add space savings to json data
+			var updatedJsonData = jsonData
+			if var jsonString = String(data: jsonData, encoding: .utf8) {
+				jsonString.append("\n// Space savings: \(formatBytes(spaceSavings))")
+				jsonString.append("\n// Match mode used: \(mode)")
+				updatedJsonData = jsonString.data(using: .utf8, allowLossyConversion: false)!
+			}
 			// create the file
-			try jsonData.write(to: URL(fileURLWithPath: "\(outputPath!)/\(appData.uninstall.appName)_report.json"), options: .atomic)
+			try updatedJsonData.write(to: URL(fileURLWithPath: "\(outputPath!)/\(appData.uninstall.appName)_report.json"), options: .atomic)
 			AppLog.info("Report written to \(outputPath!)/\(appData.uninstall.appName)_report.json")
 		} else {
-			print("----------------------------------------------------------")
-			print("Found \(appFiles.count) files that would be affected by an uninstall")
-			print("----------------------------------------------------------")
+			let infoString = "Found \(appFiles.count) items that would be affected by an uninstall totaling \(formatBytes(spaceSavings))"
+			print(String(repeating: "-", count: infoString.count))
+			print(infoString)
+			print(String(repeating: "-", count: infoString.count))
 			print(appFiles.sorted().joined(separator: "\n"))}
 		}
 }

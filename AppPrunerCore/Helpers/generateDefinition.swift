@@ -17,7 +17,8 @@ func generateDefinition(name: String,
                         forgetPkg: Bool = true,
                         unloadLaunchDaemons: Bool = false,
 						path: String? = nil,
-						matchMode: String? = nil) throws {
+						matchMode: String? = nil,
+						brewName: String? = nil) throws {
     let uninstallData = UninstallData(
         appName: app,
         alternativeNames: alternativeNames,
@@ -26,7 +27,8 @@ func generateDefinition(name: String,
         additionalPaths: additionalPaths,
         forgetPkg: forgetPkg,
         unloadLaunchDaemons: unloadLaunchDaemons,
-		matchMode: matchMode
+		matchMode: matchMode,
+		brewName: brewName
     )
     let definition = Definition(
 		name: name.lowercased().replacingOccurrences(of: " ", with: ""),

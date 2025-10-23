@@ -7,21 +7,6 @@
 
 import Foundation
 
-func setMatchMode(matchMode: String) -> MatchMode {
-	let mode: MatchMode
-	switch matchMode.lowercased() {
-	case "exact":
-		mode = .exact
-	case "prefix":
-		mode = .prefix
-	case "substring":
-		mode = .substring
-	default:
-		mode = .all
-	}
-	return mode
-}
-
 func uninstallApp(def: String?,
 				  matchMode: String?,
 				  dryRun: Bool = false,
@@ -29,7 +14,8 @@ func uninstallApp(def: String?,
 				  silent: Bool = false,
 				  version: String? = nil,
 				  waitTime: Int? = 5,
-				  definitionPath: String? = nil) throws {
+				  definitionPath: String? = nil,
+				  brewTidy: Bool = false) throws {
 	let fm = FileManager.default
 	
 	syncCatalog(force: true)
@@ -166,6 +152,14 @@ func uninstallApp(def: String?,
 	
 	if appData.uninstall.forgetPkg {
 		try forgetPackage(def: appData, dryRun: dryRun)
+	}
+	
+	if brewTidy {
+		_ = brewTidyPostHook(
+			bundleId: appData.uninstall.bundleId,
+			appData: appData.uninstall,
+			dryRun: dryRun
+		)
 	}
 
 	if !silent {

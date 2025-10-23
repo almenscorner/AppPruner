@@ -23,4 +23,5 @@ struct UninstallData: Codable {
 	let forgetPkg: Bool
 	let unloadLaunchDaemons: Bool
 	let matchMode: String?
+	let brewName: String?
 }
