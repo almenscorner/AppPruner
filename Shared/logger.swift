@@ -15,6 +15,18 @@ public enum AppLog {
 		case warning = "WARNING"
 	}
 
+    // ANSI color codes for console output
+    private static func ansiColor(for level: Level) -> String {
+        switch level {
+        case .info:    return "\u{001B}[96m" // Cyan
+        case .warning: return "\u{001B}[93m" // Yellow
+        case .error:   return "\u{001B}[91m" // Red
+        case .debug:   return ""            // Default (no color)
+        }
+    }
+
+    private static let ansiReset = "\u{001B}[0m"
+
 	private static let logDir: URL = {
 		let base = FileManager.default.urls(for: .libraryDirectory, in: .localDomainMask).first!
 		let dir = base.appendingPathComponent("Logs/AppPruner", isDirectory: true)
@@ -36,14 +48,17 @@ public enum AppLog {
 	// MARK: - Core
 	private static func write(_ message: String, level: Level) {
 		let ts = ISO8601DateFormatter().string(from: Date())
-		let line = "[\(ts)] [\(level.rawValue)] \(message)\n"
+        let levelToken = "[\(level.rawValue)]"
+        let plainLine = "[\(ts)] \(levelToken) \(message)\n"
+        let coloredLevelToken = "\(ansiColor(for: level))\(levelToken)\(ansiReset)"
+        let coloredLine = "[\(ts)] \(coloredLevelToken) \(message)\n"
 
-		// print to console
+		// print to console (colorized)
 		if level == .debug && !AppPrunerConfig.debugEnabled { return }
-		print(line, terminator: "")
+		print(coloredLine, terminator: "")
 
 		// append to file
-		if let data = line.data(using: .utf8) {
+		if let data = plainLine.data(using: .utf8) {
 			if !FileManager.default.fileExists(atPath: logFile.path) {
 				FileManager.default.createFile(atPath: logFile.path, contents: nil)
 			}
@@ -79,3 +94,4 @@ public enum AppLog {
 		FileManager.default.createFile(atPath: logFile.path, contents: nil)
 	}
 }
+
