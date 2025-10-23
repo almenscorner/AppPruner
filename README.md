@@ -89,6 +89,7 @@ AppPruner uses subcommands. The default subcommand is uninstall. If you run AppP
   - --version <string>           (select a specific definition/app version if supported)
   - --silent
   - --wait-time <minutes>        (default: 5)
+  - --brew-tidy                  (run `brew cleanup` post uninstall if applicable)
 
 - list-app-definitions
   - Lists all available definitions in the local catalog.
@@ -104,6 +105,7 @@ AppPruner uses subcommands. The default subcommand is uninstall. If you run AppP
   - --forget-pkg
   - --unload-launch-daemons
   - --output-path <path>         (default: current directory)
+  - --brew-name <string>        (Homebrew name to look up for the app. If not set app name will be used.)
 
 - sync-definitions
   - Syncs the local catalog with the remote source.
