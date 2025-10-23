@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-21T12:32:43Z",
+  "generated_at": "2025-10-23T08:58:00Z",
   "items": [
     {
       "id": "com.DigiDNA.iMazingProfileEditorMac",
@@ -45,10 +45,10 @@
     {
       "id": "com.jordanbaird.Ice",
       "name": "ice",
-      "version": "1",
-      "updated_at": "2025-10-21T12:15:34Z",
+      "version": "2",
+      "updated_at": "2025-10-23T10:57:34Z",
       "path": "defs/JordanBaird/ice.json",
-      "sha256": "0f4f36cac9461ceb637edce7386e4a05e5eb333e30d0e353bf43780362d38b26"
+      "sha256": "ec1cf550bca3d640c7a0e56c88e5bdb959eafc632307ddb3b5359f4043c98f6b"
     },
     {
       "id": "com.github.macadmins.Nudge",

@@ -5,8 +5,9 @@
     "bundleId" : "com.jordanbaird.Ice",
     "forgetPkg" : true,
     "unloadLaunchDaemons" : false,
-    "matchMode" : "prefix"
+    "matchMode" : "prefix",
+    "brewName" : "jordanbaird-ice"
   },
-  "updated_at" : "2025-10-21T12:15:34Z",
-  "version" : "1"
+  "updated_at" : "2025-10-23T10:57:34Z",
+  "version" : "2"
 }
