@@ -286,6 +286,14 @@ func searchFoldersForApp(_ def: Definition, matchMode: MatchMode = .all, removeU
 			}
 		}
 	}
-	return result
+	// Post-pass compaction to make results order-agnostic, keep only highest ancestors
+	let sortedByLength = result.sorted { $0.count < $1.count }
+	var compact = Set<String>()
+	for path in sortedByLength {
+		if !compact.contains(where: { path == $0 || path.hasPrefix($0 + "/") }) {
+			compact.insert(path)
+		}
+	}
+	return compact
 }
 
