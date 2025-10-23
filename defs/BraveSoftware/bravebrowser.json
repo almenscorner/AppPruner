@@ -1,0 +1,12 @@
+{
+  "name" : "bravebrowser",
+  "uninstall" : {
+    "appName" : "Brave Browser",
+    "brewName" : "brave-browser",
+    "bundleId" : "com.brave.Browser",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T09:20:20Z",
+  "version" : "1"
+}

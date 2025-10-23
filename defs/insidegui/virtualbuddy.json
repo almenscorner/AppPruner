@@ -1,0 +1,11 @@
+{
+  "name" : "virtualbuddy",
+  "uninstall" : {
+    "appName" : "VirtualBuddy",
+    "bundleId" : "codes.rambo.VirtualBuddy",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T10:20:33Z",
+  "version" : "1"
+}

@@ -1,0 +1,12 @@
+{
+  "name" : "jabradirect",
+  "uninstall" : {
+    "appName" : "Jabra Direct",
+    "brewName" : "jabra-direct",
+    "bundleId" : "com.jabra.directonline",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T10:38:00Z",
+  "version" : "1"
+}

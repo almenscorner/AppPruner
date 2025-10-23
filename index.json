@@ -1,7 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-23T08:58:00Z",
+  "generated_at": "2025-10-23T10:40:55Z",
   "items": [
+    {
+      "id": "com.betterdisplay.BetterDisplay",
+      "name": "betterdisplay",
+      "version": "1",
+      "updated_at": "2025-10-23T10:30:44Z",
+      "path": "defs/BetterDisplay/betterdisplay.json",
+      "sha256": "dc801a6039bde8ba205fec66e45117826c24ab7af6311e4b539ddc628e8deac2"
+    },
+    {
+      "id": "com.brave.Browser",
+      "name": "bravebrowser",
+      "version": "1",
+      "updated_at": "2025-10-23T09:20:20Z",
+      "path": "defs/BraveSoftware/bravebrowser.json",
+      "sha256": "3bc4de2265ad095be2090287d68044bc8ff31ad86633d501b4c28d9a49793e27"
+    },
     {
       "id": "com.DigiDNA.iMazingProfileEditorMac",
       "name": "imazingprofileeditor",
@@ -43,12 +59,44 @@
       "sha256": "8115b40d12f9d731baf64492f824ec877191dac58bd63b492362a4dffe8cabe3"
     },
     {
+      "id": "com.hjuutilainen.MunkiAdmin",
+      "name": "munkiadmin",
+      "version": "1",
+      "updated_at": "2025-10-23T09:34:15Z",
+      "path": "defs/Hjuutilainen/munkiadmin.json",
+      "sha256": "a5130edc7c4cc4429ad432ed7a20b0e3a089eee932e46e6884f7002ec0e86d03"
+    },
+    {
+      "id": "com.jabra.directonline",
+      "name": "jabradirect",
+      "version": "1",
+      "updated_at": "2025-10-23T10:38:00Z",
+      "path": "defs/Jabra/jabradirect.json",
+      "sha256": "829a6e925cddb9a2cde5e20c849640984b3f9eb67473b7f7423146dec59dbb81"
+    },
+    {
+      "id": "com.jabra.JabraFirmwareUpdate",
+      "name": "jabrafirmwareupdate",
+      "version": "1",
+      "updated_at": "2025-10-23T10:40:13Z",
+      "path": "defs/Jabra/jabrafirmwareupdate.json",
+      "sha256": "31d1a4302c7f099617b64ac139bd21769fdc31ee28e8eedef6b3defa2c40a126"
+    },
+    {
       "id": "com.jordanbaird.Ice",
       "name": "ice",
       "version": "2",
       "updated_at": "2025-10-23T10:57:34Z",
       "path": "defs/JordanBaird/ice.json",
       "sha256": "ec1cf550bca3d640c7a0e56c88e5bdb959eafc632307ddb3b5359f4043c98f6b"
+    },
+    {
+      "id": "com.logi.optionsplus",
+      "name": "logioptionsplus",
+      "version": "1",
+      "updated_at": "2025-10-23T10:38:38Z",
+      "path": "defs/Logitech/logioptionsplus.json",
+      "sha256": "787919fcf0c43ee8bc8c62ae0852fb8939053f66cae86048d5184a30525834d0"
     },
     {
       "id": "com.github.macadmins.Nudge",
@@ -155,6 +203,14 @@
       "sha256": "edc9e3a0b49e9e1fd97d5d2d455d9578cca81b8bc65fb62f9fd588960eeb53da"
     },
     {
+      "id": "com.parallels.desktop.console",
+      "name": "parallelsdesktop",
+      "version": "1",
+      "updated_at": "2025-10-23T10:28:32Z",
+      "path": "defs/Parallels/parallelsdesktop.json",
+      "sha256": "a9326fbe372a6450bc1f5108615a71b546f9fca5d3fa0343d61aa1ac89791b59"
+    },
+    {
       "id": "com.valvesoftware.steam",
       "name": "steam",
       "version": "1",
@@ -163,12 +219,36 @@
       "sha256": "2294aed90de122a9ef7d46decf9cccdc195f322028092d4a3abbf329c2cbaa8c"
     },
     {
+      "id": "com.yubico.ykman",
+      "name": "yubikeymanager",
+      "version": "1",
+      "updated_at": "2025-10-23T10:24:12Z",
+      "path": "defs/Yubico/yubikeymanager.json",
+      "sha256": "b0135d0fa31a35fe4fe9648381905e733cb2af2445ff171fbc7b1b4a351f05d9"
+    },
+    {
+      "id": "app.zen-browser.zen",
+      "name": "zen",
+      "version": "1",
+      "updated_at": "2025-10-23T09:30:29Z",
+      "path": "defs/Zen/zen.json",
+      "sha256": "2efa383578c10e225a42da06f7ca2f40052e12553c25c757cbfbaf98575a4a30"
+    },
+    {
       "id": "us.zoom-xos",
       "name": "zoom",
       "version": "1",
       "updated_at": "2025-10-17T13:42:02Z",
       "path": "defs/Zoom/zoom.json",
       "sha256": "9f150f33a59b167d2be1956e7e6e211185e195064a5204e7fe734bf3a28ec895"
+    },
+    {
+      "id": "codes.rambo.VirtualBuddy",
+      "name": "virtualbuddy",
+      "version": "1",
+      "updated_at": "2025-10-23T10:20:33Z",
+      "path": "defs/insidegui/virtualbuddy.json",
+      "sha256": "4ae360fcb78b3da759ee9fbe7afdb51ea2afa86e5f8873524fa4a59f0df6d7d8"
     }
   ]
 }

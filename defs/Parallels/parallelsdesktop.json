@@ -1,0 +1,11 @@
+{
+  "name" : "parallelsdesktop",
+  "uninstall" : {
+    "appName" : "Parallels Desktop",
+    "bundleId" : "com.parallels.desktop.console",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T10:28:32Z",
+  "version" : "1"
+}

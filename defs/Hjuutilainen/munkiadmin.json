@@ -1,0 +1,11 @@
+{
+  "name" : "munkiadmin",
+  "uninstall" : {
+    "appName" : "Munki Admin",
+    "bundleId" : "com.hjuutilainen.MunkiAdmin",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T09:34:15Z",
+  "version" : "1"
+}

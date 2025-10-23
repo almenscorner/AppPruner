@@ -1,0 +1,15 @@
+{
+  "name" : "logioptionsplus",
+  "uninstall" : {
+    "alternativeNames" : [
+      "logioptionsplus"
+    ],
+    "appName" : "Logi Options+",
+    "brewName" : "logi-options+",
+    "bundleId" : "com.logi.optionsplus",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-23T10:38:38Z",
+  "version" : "1"
+}

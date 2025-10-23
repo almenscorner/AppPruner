@@ -1,0 +1,11 @@
+{
+  "name" : "zen",
+  "uninstall" : {
+    "appName" : "Zen",
+    "bundleId" : "app.zen-browser.zen",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T09:30:29Z",
+  "version" : "1"
+}

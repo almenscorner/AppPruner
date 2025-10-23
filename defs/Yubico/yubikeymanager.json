@@ -1,0 +1,11 @@
+{
+  "name" : "yubikeymanager",
+  "uninstall" : {
+    "appName" : "YubiKey Manager",
+    "bundleId" : "com.yubico.ykman",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T10:24:12Z",
+  "version" : "1"
+}

@@ -1,0 +1,11 @@
+{
+  "name" : "jabrafirmwareupdate",
+  "uninstall" : {
+    "appName" : "Jabra Firmware Update",
+    "bundleId" : "com.jabra.JabraFirmwareUpdate",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-10-23T10:40:13Z",
+  "version" : "1"
+}

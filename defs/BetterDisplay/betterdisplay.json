@@ -1,0 +1,11 @@
+{
+  "name" : "betterdisplay",
+  "uninstall" : {
+    "appName" : "BetterDisplay",
+    "bundleId" : "com.betterdisplay.BetterDisplay",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-23T10:30:44Z",
+  "version" : "1"
+}
