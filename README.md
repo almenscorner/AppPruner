@@ -1,6 +1,5 @@
 # AppPruner 
-<img width="150" height="150" alt="AppPruner" src="https://github.com/user-attachments/assets/917d2b6b-5a76-4e63-8fdb-44564e1dfba1" />
-
+<img width="150" height="150" alt="apppruner" src="https://github.com/user-attachments/assets/cf07f066-90ee-49be-98f1-38b7ef26c22e" />
 
 Command‑line tool for managing macOS app uninstallations.
 
@@ -153,4 +152,5 @@ Generated manifests describe how to locate and remove an app. A typical shape:
 ## License
 
 Apache 2.0
+
 
