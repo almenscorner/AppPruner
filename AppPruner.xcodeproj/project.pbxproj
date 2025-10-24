@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F6DCCE222EA1275B0015B3E5 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = F6DCCE212EA1275B0015B3E5 /* ArgumentParser */; };
 		F6DCCE242EA127620015B3E5 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = F6DCCE232EA127620015B3E5 /* ArgumentParser */; };
-		F6DCCFEE2EA23D330015B3E5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F6DCCFED2EA23D330015B3E5 /* AppIcon.icon */; };
+		F6DCDBAF2EAB737F0015B3E5 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F6DCDBAE2EAB737F0015B3E5 /* AppIcon.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		F6DCCDA42EA10FA90015B3E5 /* AppPruner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppPruner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DCCDD22EA110060015B3E5 /* AppPrunerCore */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AppPrunerCore; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6DCCFED2EA23D330015B3E5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		F6DCDBAE2EAB737F0015B3E5 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -76,7 +76,7 @@
 				F6DCCDD32EA110060015B3E5 /* AppPrunerCore */,
 				F6DCCE202EA1275B0015B3E5 /* Frameworks */,
 				F6DCCDA52EA10FA90015B3E5 /* Products */,
-				F6DCCFED2EA23D330015B3E5 /* AppIcon.icon */,
+				F6DCDBAE2EAB737F0015B3E5 /* AppIcon.icon */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,7 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6DCCFEE2EA23D330015B3E5 /* AppIcon.icon in Resources */,
+				F6DCDBAF2EAB737F0015B3E5 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
