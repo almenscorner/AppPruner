@@ -15,7 +15,9 @@ func uninstallApp(def: String?,
 				  version: String? = nil,
 				  waitTime: Int? = 5,
 				  definitionPath: String? = nil,
-				  brewTidy: Bool = false) throws {
+				  brewTidy: Bool = false,
+				  preFlightCommand: String? = nil,
+				  postFlightCommand: String? = nil) throws {
 	let fm = FileManager.default
 	
 	syncCatalog(force: true)
@@ -78,6 +80,12 @@ func uninstallApp(def: String?,
 			playSound: true,
 			interruptionLevel: "active"
 		)
+	}
+
+	// run pre-flight scripts
+	if preFlightCommand != nil {
+		AppLog.info("Running pre-flight command: \(preFlightCommand!)")
+		_ = try executeCommand(with: ["-c", preFlightCommand!], executablePath: "/bin/zsh")
 	}
 
 	// Unload daemons and agents
@@ -160,6 +168,12 @@ func uninstallApp(def: String?,
 			appData: appData.uninstall,
 			dryRun: dryRun
 		)
+	}
+	
+	// run post-flight scripts
+	if postFlightCommand != nil {
+		AppLog.info("Running post-flight command: \(postFlightCommand!)")
+		_ = try executeCommand(with: ["-c", postFlightCommand!], executablePath: "/bin/zsh")
 	}
 
 	if !silent {

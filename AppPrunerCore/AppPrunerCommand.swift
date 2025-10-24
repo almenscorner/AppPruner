@@ -149,6 +149,12 @@ struct Uninstall: ParsableCommand {
 	@Flag(help: "Run homebrew tidy post uninstall if applicable.")
 	var brewTidy: Bool = false
 	
+	@Option(help: "Run a command before the uninstall")
+	var preFlightCommand: String?
+	
+	@Option(help: "Run a command after the uninstall")
+	var postFlightCommand: String?
+	
 	@OptionGroup var global: GlobalOptions
 
 	mutating func run() throws {
@@ -166,7 +172,9 @@ struct Uninstall: ParsableCommand {
 			version: version,
 			waitTime: waitTime,
 			definitionPath: definitionPath,
-			brewTidy: brewTidy)
+			brewTidy: brewTidy,
+			preFlightCommand: preFlightCommand,
+			postFlightCommand: postFlightCommand)
 	}
 }
 

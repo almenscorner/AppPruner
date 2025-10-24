@@ -90,6 +90,8 @@ AppPruner uses subcommands. The default subcommand is uninstall. If you run AppP
   - --silent
   - --wait-time <minutes>        (default: 5)
   - --brew-tidy                  (run `brew cleanup` post uninstall if applicable)
+  - --pre-flight-command <string> (command to run before uninstall starts)
+  - --post-flight-command <string> (command to run after uninstall completes)
 
 - list-app-definitions
   - Lists all available definitions in the local catalog.
