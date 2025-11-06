@@ -1,0 +1,11 @@
+{
+  "name" : "displaylinkeuc",
+  "uninstall" : {
+    "appName" : "DisplayLink End-User Cleaner",
+    "bundleId" : "com.displaylink.EndUserCleaner",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-11-06T14:25:30Z",
+  "version" : "1"
+}

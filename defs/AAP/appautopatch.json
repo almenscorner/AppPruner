@@ -1,0 +1,14 @@
+{
+  "name" : "appautopatch",
+  "uninstall" : {
+    "additionalPaths" : [
+      "/Library/Management"
+    ],
+    "appName" : "AppAutoPatch",
+    "bundleId" : "xyz.techitout.aap",
+    "forgetPkg" : false,
+    "unloadLaunchDaemons" : true
+  },
+  "updated_at" : "2025-11-06T14:08:14Z",
+  "version" : "1"
+}

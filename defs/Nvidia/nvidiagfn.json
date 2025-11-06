@@ -1,0 +1,12 @@
+{
+  "name" : "nvidiagfn",
+  "uninstall" : {
+    "appName" : "NVIDIA GeForce NOW",
+    "brewName" : "nvidia-geforce-now",
+    "bundleId" : "com.nvidia.gfnpc.mall",
+    "forgetPkg" : true,
+    "unloadLaunchDaemons" : false
+  },
+  "updated_at" : "2025-10-24T14:00:54Z",
+  "version" : "1"
+}

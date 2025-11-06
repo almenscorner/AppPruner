@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2025-10-23T10:40:55Z",
+  "generated_at": "2025-11-06T14:36:08Z",
   "items": [
+    {
+      "id": "xyz.techitout.aap",
+      "name": "appautopatch",
+      "version": "1",
+      "updated_at": "2025-11-06T14:08:14Z",
+      "path": "defs/AAP/appautopatch.json",
+      "sha256": "cd2224820625286d649d86ce6f8da77c2cd83d4e39150040ac5c648acaddcfdb"
+    },
     {
       "id": "com.betterdisplay.BetterDisplay",
       "name": "betterdisplay",
@@ -25,6 +33,14 @@
       "updated_at": "2025-10-21T08:19:24Z",
       "path": "defs/DigiDNA/imazingprofileeditor.json",
       "sha256": "a6861396f0cdf7a00a6d02d158ada6e85999fab54ac7449a4c30c383784aa384"
+    },
+    {
+      "id": "com.displaylink.EndUserCleaner",
+      "name": "displaylinkeuc",
+      "version": "1",
+      "updated_at": "2025-11-06T14:25:30Z",
+      "path": "defs/DisplayLink/displaylinkeuc.json",
+      "sha256": "2e1f405aeec2c0622a09b001d86afbbbecfb80f5392c3ab3b5aeb78940e288d5"
     },
     {
       "id": "com.docker.docker",
@@ -195,6 +211,14 @@
       "sha256": "be2bd036c1ef4a4b500a8cc07ff2b21eea43373428f25dde244db8ceeabe93d1"
     },
     {
+      "id": "com.nvidia.gfnpc.mall",
+      "name": "nvidiagfn",
+      "version": "1",
+      "updated_at": "2025-10-24T14:00:54Z",
+      "path": "defs/Nvidia/nvidiagfn.json",
+      "sha256": "72c2c607f0dc90b1649ecef798b64999a4addd66523fa7129d06082c281de5bc"
+    },
+    {
       "id": "com.electron.ollama",
       "name": "ollama",
       "version": "1",
@@ -209,6 +233,14 @@
       "updated_at": "2025-10-23T10:28:32Z",
       "path": "defs/Parallels/parallelsdesktop.json",
       "sha256": "a9326fbe372a6450bc1f5108615a71b546f9fca5d3fa0343d61aa1ac89791b59"
+    },
+    {
+      "id": "com.alienator88.Pearcleaner",
+      "name": "pearcleaner",
+      "version": "1",
+      "updated_at": "2025-11-06T13:59:24Z",
+      "path": "defs/Pearcleaner/pearcleaner.json",
+      "sha256": "810e39b000fb8a03ea2baa24cb6ac01e562595d2e5d33cc63d3741f24c7b0367"
     },
     {
       "id": "com.valvesoftware.steam",
